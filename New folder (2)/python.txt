@@ -1,0 +1,29 @@
+import time
+import random
+from selenium import webdriver
+
+driver = webdriver.Chrome('D:\pythoninstaller\chromedriver_win32\chromedriver.exe')
+
+videos = [
+'https://www.youtube.com/watch?v=cCwnDBF23mQ&mute=1&list=PLVCgi5HZ0-YseS0QDC-Occ4ggHDYapo3h',
+'https://www.youtube.com/watch?v=wpzclgRPsTA&mute=1&list=PLVCgi5HZ0-YseS0QDC-Occ4ggHDYapo3h&index=2',
+'https://www.youtube.com/watch?v=Okrs5tJG2qk&mute=1&list=PLVCgi5HZ0-YseS0QDC-Occ4ggHDYapo3h&index=3',
+'https://www.youtube.com/watch?v=IOch1-r7-lg&mute=1&list=PLVCgi5HZ0-YseS0QDC-Occ4ggHDYapo3h&index=4',
+'https://www.youtube.com/watch?v=kbr6A6MKJpQ&mute=1&list=PLVCgi5HZ0-YseS0QDC-Occ4ggHDYapo3h&index=5',
+'https://www.youtube.com/watch?v=xx78kGVVRJQ&mute=1&list=PLVCgi5HZ0-YseS0QDC-Occ4ggHDYapo3h&index=6',
+'https://www.youtube.com/watch?v=xkQ7AgBwGq0&mute=1&list=PLVCgi5HZ0-Yt5UGLObhh6rHHtye0xKKFp',
+'https://www.youtube.com/watch?v=6jYKn5ULJX0&mute=1&list=PLVCgi5HZ0-Yt5UGLObhh6rHHtye0xKKFp&index=2',
+'https://www.youtube.com/watch?v=i40LjnKwEaw&mute=1&list=PLVCgi5HZ0-Yt5UGLObhh6rHHtye0xKKFp&index=3'
+]
+
+sleep_time = 0
+
+for i in range(1000):
+print("Watching for {} time".format(i))
+random_video = random.randint(0,5)
+driver.get(videos[random_video])
+time.sleep(sleep_time) # Let the user actually see something!
+sleep_time = random.randint(60, 130)
+
+time.sleep(5) # Let the user actually see something!
+driver.quit()
